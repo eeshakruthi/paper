@@ -3,7 +3,6 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
-const Render = Matter.Render;
 var dustbinObj, paperObject,groundObject	
 var world,Slingshot;
 
@@ -18,19 +17,9 @@ function setup() {
 	groundObject=new Ground(width/2,670,width,20);
 	dustbinObj=new Bin(1200,650);
 	Slingshot = new SlingShot(paperObject.body,{x:400,y:350});
-	var render = Render.create({
-	  element: document.body,
-	  engine: engine,
-	  options: {
-	    width: 1600,
-	    height: 700,
-	    wireframes: false
-	  }
-	});
-
+	
 	Engine.run(engine);
-	Render.run(render);
-  
+	
 }
 
 function draw() {
